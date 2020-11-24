@@ -18,7 +18,7 @@ namespace QTD
 
         void Update()
         {
-            if (IsOccupied && Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
+            if (IsOccupied && !TowerManager.instance.IsPlacingTower && Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
             {
                 // Collide with grid tile layer and ui layer (possibly tower ui)
                 Collider2D collided = Physics2D.OverlapPoint(Camera.main.ScreenToWorldPoint(Input.mousePosition), 1 << gameObject.layer);

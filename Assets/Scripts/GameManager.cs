@@ -46,6 +46,7 @@ namespace QTD
         void Start()
         {
             // Init UI
+            UIManager.instance.ShowMainMenu();
             UIManager.instance.SetHealthText(_health.ToString());
             UIManager.instance.SetGoldText(_gold.ToString());
         }
@@ -61,7 +62,7 @@ namespace QTD
             {
                 EndGame();
             }
-            else if (Input.GetKeyDown(KeyCode.Escape))
+            else if (Input.GetKeyDown(KeyCode.Space))
             {
                 if (paused)
                     UnpauseGame();

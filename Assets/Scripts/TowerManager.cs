@@ -16,6 +16,8 @@ namespace QTD
 
         private GridTile _targetTile;
 
+        public bool IsPlacingTower => _placingTower is object;
+
         void Awake()
         {
             if (!instance)
@@ -28,16 +30,32 @@ namespace QTD
 
             HoverTower();
 
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetKeyDown(KeyCode.Escape))
+                CancelTower();
+            else if (Input.GetMouseButtonDown(0))
                 PlaceTower();
         }
 
         public void SelectTower(GameObject tower)
         {
-            if (_placingTower is object) return;
+            if (IsPlacingTower) return;
 
             // Place in off-screen (hard-coded but hey)
             _placingTower = Instantiate(tower, new Vector2(1000, 1000), Quaternion.identity).GetComponent<Tower>();
+
+            UIManager.instance.ShowTowerSelects(true);
+        }
+
+        private void CancelTower()
+        {
+            if (!IsPlacingTower) return;
+
+            Destroy(_placingTower.gameObject);
+
+            UIManager.instance.ShowTowerSelects(false);
+
+            _placingTower = null;
+            _targetTile = null;
         }
 
         private void HoverTower()
@@ -56,8 +74,10 @@ namespace QTD
         {
             Collider2D collided = Physics2D.OverlapPoint(Camera.main.ScreenToWorldPoint(Input.mousePosition), _gridLayer.value);
 
+            GridTile grid = collided?.GetComponent<GridTile>();
+
             // Make sure when placing tower, the grid its placing on is the same as hover (double-check)
-            if (collided is object && collided?.GetComponent<GridTile>() == _targetTile)
+            if (grid is object && grid == _targetTile && !grid.IsOccupied)
             {
                 _placingTower.transform.position = _targetTile.transform.position;
 
@@ -68,6 +88,8 @@ namespace QTD
                 _targetTile.Tower = _placingTower;
 
                 GameManager.instance.UseGold(_placingTower.InitialCost);
+
+                UIManager.instance.ShowTowerSelects(false);
 
                 // Clean-up
                 _placingTower = null;

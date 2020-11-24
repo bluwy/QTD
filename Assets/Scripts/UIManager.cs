@@ -29,6 +29,7 @@ namespace QTD
         [Header("Gameplay")]
         [SerializeField]
         private TextMeshProUGUI _waveText;
+
         private float _showWaveDuration = 3f;
 
         [SerializeField]
@@ -36,6 +37,9 @@ namespace QTD
 
         [SerializeField]
         private TextMeshProUGUI _goldText;
+
+        [SerializeField]
+        private GameObject _towerSelects;
 
         void Awake()
         {
@@ -72,6 +76,11 @@ namespace QTD
             _gamePausePanel.SetActive(false);
             _gameOverPanel.SetActive(true);
             _gameOverText.text = gameOverText;
+        }
+
+        public void ShowTowerSelects(bool isPlacing)
+        {
+            _towerSelects.SetActive(!isPlacing);
         }
 
         public void SetHealthText(string text)
