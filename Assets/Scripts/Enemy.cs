@@ -121,7 +121,12 @@ namespace QTD
             _pathTween = _rigidbody
                 .DOPath(_path.ToArray(), _totalTimeRequired, PathType.Linear, PathMode.TopDown2D)
                 .SetEase(Ease.Linear)
-                .OnComplete(() => { Die(true); })
+                .OnComplete(() =>
+                {
+                    _pathTween.Kill();
+                    _pathTween = null;
+                    Die(true);
+                })
                 .Pause();
         }
 

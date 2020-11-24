@@ -924,12 +924,56 @@ MonoBehaviour:
   _gold: 100
   _timeBeforeSpawn: 3
   _waves:
-  - _name: One By One
+  - _name: Welcome
     _spawnGroups:
     - _enemy: {fileID: 4702034197633974650, guid: 1a0bd0fd0b32a20e492f5a2a733bb9fc, type: 3}
       _count: 10
       _interval: 0.5
       _spawnDuration: 6
+    - _enemy: {fileID: 5247731763395690933, guid: 18e23485e2915d15890da323147e07de, type: 3}
+      _count: 5
+      _interval: 0.5
+      _spawnDuration: 4
+    - _enemy: {fileID: 4702034197633974650, guid: 1a0bd0fd0b32a20e492f5a2a733bb9fc, type: 3}
+      _count: 8
+      _interval: 0.5
+      _spawnDuration: 7
+  - _name: Hordes incoming
+    _spawnGroups:
+    - _enemy: {fileID: 4702034197633974650, guid: 1a0bd0fd0b32a20e492f5a2a733bb9fc, type: 3}
+      _count: 20
+      _interval: 1
+      _spawnDuration: 2
+    - _enemy: {fileID: 5247731763395690933, guid: 18e23485e2915d15890da323147e07de, type: 3}
+      _count: 5
+      _interval: 2
+      _spawnDuration: 10
+    - _enemy: {fileID: 4702034197633974650, guid: 1a0bd0fd0b32a20e492f5a2a733bb9fc, type: 3}
+      _count: 8
+      _interval: 0.5
+      _spawnDuration: 7
+    - _enemy: {fileID: 8114144186386244999, guid: 1f1f849ffe61029c3a4077a4e991c6eb, type: 3}
+      _count: 2
+      _interval: 2
+      _spawnDuration: 6
+  - _name: More hordes
+    _spawnGroups:
+    - _enemy: {fileID: 4702034197633974650, guid: 1a0bd0fd0b32a20e492f5a2a733bb9fc, type: 3}
+      _count: 10
+      _interval: 0.5
+      _spawnDuration: 5
+    - _enemy: {fileID: 5247731763395690933, guid: 18e23485e2915d15890da323147e07de, type: 3}
+      _count: 12
+      _interval: 1
+      _spawnDuration: 10
+    - _enemy: {fileID: 4702034197633974650, guid: 1a0bd0fd0b32a20e492f5a2a733bb9fc, type: 3}
+      _count: 8
+      _interval: 0.5
+      _spawnDuration: 1
+    - _enemy: {fileID: 8114144186386244999, guid: 1f1f849ffe61029c3a4077a4e991c6eb, type: 3}
+      _count: 3
+      _interval: 1
+      _spawnDuration: 5
   goldChangeEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -2769,7 +2813,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -13252,7 +13296,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}

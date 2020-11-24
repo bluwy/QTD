@@ -426,22 +426,22 @@ MonoBehaviour:
   _levelInfos:
   - cost: 30
     attackInterval: 0.8
-    range: 5
+    range: 4
     sellPrice: 15
     projectileSpeed: 20
-    projectileDamage: 50
+    projectileDamage: 30
   - cost: 40
     attackInterval: 0.8
-    range: 6
+    range: 5
     sellPrice: 20
     projectileSpeed: 20
-    projectileDamage: 60
+    projectileDamage: 40
   - cost: 50
-    attackInterval: 0.8
-    range: 7
+    attackInterval: 0.6
+    range: 6
     sellPrice: 25
     projectileSpeed: 20
-    projectileDamage: 70
+    projectileDamage: 50
 --- !u!1 &6030029585491775963
 GameObject:
   m_ObjectHideFlags: 0

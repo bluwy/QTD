@@ -74,7 +74,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _health: 100
   _speed: 1
-  _gold: 1
+  _gold: 2
   _sprite: {fileID: 7504568203183401406}
 --- !u!50 &4292643716759219842
 Rigidbody2D:
