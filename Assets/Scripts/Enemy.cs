@@ -59,6 +59,15 @@ namespace QTD
             _rigidbody = GetComponent<Rigidbody2D>();
         }
 
+        void Update()
+        {
+            if (_pathTween is object && _pathTween.IsPlaying())
+            {
+                Vector2 lookAt = GetPosition(0.01f);
+                transform.up = new Vector3(lookAt.x, lookAt.y, transform.position.z) - transform.position;
+            }
+        }
+
         public void ReceiveDamage(float health)
         {
             _health -= health;
@@ -99,7 +108,7 @@ namespace QTD
                 _pathTween.Kill();
 
             // NOTE: I can't do .SetLookAt to rotate the enemy because DOTween reported a casting error.
-            // Seems like an internal bug.
+            // Seems like an internal bug. Use manual Update() instead.
             _pathTween = _rigidbody
                 .DOPath(_path.ToArray(), _totalTimeRequired, PathType.Linear, PathMode.TopDown2D)
                 .SetEase(Ease.Linear)
