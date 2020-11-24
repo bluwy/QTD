@@ -21,6 +21,9 @@ namespace QTD
         [Tooltip("The gold the player earns when defeating this enemy")]
         private int _gold = 10;
 
+        [SerializeField]
+        private SpriteRenderer _sprite;
+
         public bool IsDead { get; private set; }
 
         private List<Vector2> _path = new List<Vector2>();
@@ -54,9 +57,12 @@ namespace QTD
 
         private Rigidbody2D _rigidbody;
 
+        private float _maxHealth;
+
         void Awake()
         {
             _rigidbody = GetComponent<Rigidbody2D>();
+            _maxHealth = _health;
         }
 
         void Update()
@@ -74,6 +80,9 @@ namespace QTD
 
             if (_health <= 0)
                 Die(false);
+
+            if (!IsDead)
+                UpdateAlpha();
         }
 
         public void SetPath(List<Vector2> path)
@@ -129,6 +138,16 @@ namespace QTD
                 GameManager.instance.DecrementHealth();
             else
                 GameManager.instance.AddGold(_gold);
+        }
+
+        /// <summary>
+        /// Adjust sprite alpha based on health
+        /// </summary>
+        private void UpdateAlpha()
+        {
+            Color spriteColor = _sprite.color;
+            spriteColor.a = _health / _maxHealth;
+            _sprite.color = spriteColor;
         }
     }
 }
