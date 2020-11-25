@@ -8,6 +8,9 @@ namespace QTD.Projectiles
 {
     public class Rocket : Projectile
     {
+
+        [SerializeField]
+        private GameObject _explosion;
         public float SplashRadius { get; set; }
 
         public override void Launch(Enemy enemy)
@@ -35,6 +38,10 @@ namespace QTD.Projectiles
                         // TODO: Damage reduction per distance
                         collided.GetComponent<Enemy>().ReceiveDamage(Damage);
                     }
+
+                    // Explosion boom
+                    GameObject explosion = Instantiate(_explosion, targetPos, Quaternion.identity);
+                    explosion.transform.localScale = new Vector3(SplashRadius, SplashRadius, SplashRadius);
 
                     Destroy(gameObject);
                 })
