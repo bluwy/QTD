@@ -67,7 +67,7 @@ namespace QTD
 
         void Update()
         {
-            if (_pathTween is object && _pathTween.IsPlaying())
+            if (_pathTween is object && _pathTween.IsActive() && _pathTween.IsPlaying())
             {
                 Vector2 lookAt = GetPosition(0.01f);
                 transform.up = new Vector3(lookAt.x, lookAt.y, transform.position.z) - transform.position;

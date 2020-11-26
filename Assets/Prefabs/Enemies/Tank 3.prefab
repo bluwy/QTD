@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5247731763395690938}
   - component: {fileID: 3603376384979021389}
   m_Layer: 8
-  m_Name: Tank 2
+  m_Name: Tank 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -72,9 +72,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41d16d468799f8207aeb56a131811201, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 600
-  _speed: 1
-  _gold: 14
+  _health: 1200
+  _speed: 1.5
+  _gold: 12
   _sprite: {fileID: 7041059200117139825}
 --- !u!50 &3603376384979021389
 Rigidbody2D:

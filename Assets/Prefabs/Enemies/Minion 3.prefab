@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4702034197633974645}
   - component: {fileID: 4292643716759219842}
   m_Layer: 8
-  m_Name: Minion 2
+  m_Name: Minion 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -72,9 +72,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41d16d468799f8207aeb56a131811201, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 200
-  _speed: 1.4
-  _gold: 8
+  _health: 500
+  _speed: 2
+  _gold: 4
   _sprite: {fileID: 7504568203183401406}
 --- !u!50 &4292643716759219842
 Rigidbody2D:

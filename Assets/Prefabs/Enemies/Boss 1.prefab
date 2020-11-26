@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 2943211008952829572}
   - component: {fileID: 5911556524705032563}
   m_Layer: 8
-  m_Name: Boss
+  m_Name: Boss 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -155,7 +155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 1000
-  _speed: 0.3
+  _speed: 0.5
   _gold: 80
   _sprite: {fileID: 125270539091668559}
 --- !u!50 &5911556524705032563
