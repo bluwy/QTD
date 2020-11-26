@@ -20,10 +20,11 @@ namespace QTD
         [SerializeField]
         private float _spawnDuration;
 
-        public float SpawnDuration
-        {
-            get { return _spawnDuration; }
-        }
+        public int Count => _count;
+
+        public float Interval => _interval;
+
+        public float SpawnDuration => _spawnDuration;
 
         public SpawnGroup(GameObject enemy, int count, float interval, float spawnDuration)
         {
