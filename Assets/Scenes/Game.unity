@@ -1107,7 +1107,125 @@ MonoBehaviour:
     - _enemy: {fileID: 8114144186386244999, guid: 1f1f849ffe61029c3a4077a4e991c6eb, type: 3}
       _count: 3
       _interval: 1
+      _spawnDuration: 10
+  - _name: First boss
+    _spawnGroups:
+    - _enemy: {fileID: 4702034197633974650, guid: 1a0bd0fd0b32a20e492f5a2a733bb9fc, type: 3}
+      _count: 20
+      _interval: 0.5
       _spawnDuration: 5
+    - _enemy: {fileID: 5247731763395690933, guid: 18e23485e2915d15890da323147e07de, type: 3}
+      _count: 20
+      _interval: 1
+      _spawnDuration: 16
+    - _enemy: {fileID: 4702034197633974650, guid: 1a0bd0fd0b32a20e492f5a2a733bb9fc, type: 3}
+      _count: 10
+      _interval: 1.5
+      _spawnDuration: 1
+    - _enemy: {fileID: 8114144186386244999, guid: 1f1f849ffe61029c3a4077a4e991c6eb, type: 3}
+      _count: 3
+      _interval: 1
+      _spawnDuration: 5
+    - _enemy: {fileID: 2943211008952829579, guid: 2d5c30cc424377e57a941f8a1df4c655, type: 3}
+      _count: 3
+      _interval: 2
+      _spawnDuration: 15
+  - _name: Hard mode
+    _spawnGroups:
+    - _enemy: {fileID: 5247731763395690933, guid: ae25db5d860dadc71982cef05ab4e241, type: 3}
+      _count: 20
+      _interval: 1
+      _spawnDuration: 5
+    - _enemy: {fileID: 4702034197633974650, guid: 2b4936c891d1872e2913a47a6a0fd319, type: 3}
+      _count: 10
+      _interval: 0.8
+      _spawnDuration: 10
+    - _enemy: {fileID: 5247731763395690933, guid: ae25db5d860dadc71982cef05ab4e241, type: 3}
+      _count: 10
+      _interval: 0.5
+      _spawnDuration: 20
+  - _name: Hordes again
+    _spawnGroups:
+    - _enemy: {fileID: 5247731763395690933, guid: ae25db5d860dadc71982cef05ab4e241, type: 3}
+      _count: 20
+      _interval: 1
+      _spawnDuration: 5
+    - _enemy: {fileID: 4702034197633974650, guid: 2b4936c891d1872e2913a47a6a0fd319, type: 3}
+      _count: 10
+      _interval: 0.8
+      _spawnDuration: 10
+    - _enemy: {fileID: 5247731763395690933, guid: ae25db5d860dadc71982cef05ab4e241, type: 3}
+      _count: 10
+      _interval: 0.5
+      _spawnDuration: 20
+  - _name: Tanks galore
+    _spawnGroups:
+    - _enemy: {fileID: 5247731763395690933, guid: ae25db5d860dadc71982cef05ab4e241, type: 3}
+      _count: 20
+      _interval: 1.2
+      _spawnDuration: 10
+    - _enemy: {fileID: 8114144186386244999, guid: c92bf80769c38c05cb69a43d4616f65f, type: 3}
+      _count: 20
+      _interval: 0.8
+      _spawnDuration: 20
+  - _name: Second boss
+    _spawnGroups:
+    - _enemy: {fileID: 4702034197633974650, guid: 2b4936c891d1872e2913a47a6a0fd319, type: 3}
+      _count: 25
+      _interval: 2
+      _spawnDuration: 10
+    - _enemy: {fileID: 5247731763395690933, guid: ae25db5d860dadc71982cef05ab4e241, type: 3}
+      _count: 20
+      _interval: 0.8
+      _spawnDuration: 20
+    - _enemy: {fileID: 8114144186386244999, guid: c92bf80769c38c05cb69a43d4616f65f, type: 3}
+      _count: 10
+      _interval: 1.5
+      _spawnDuration: 15
+    - _enemy: {fileID: 2943211008952829579, guid: 814bbe6c3f81d412d968f8cce8c3aea5, type: 3}
+      _count: 3
+      _interval: 2
+      _spawnDuration: 15
+  - _name: Almost there
+    _spawnGroups:
+    - _enemy: {fileID: 4702034197633974650, guid: 6b2584c579ea98e568debef3c203002d, type: 3}
+      _count: 50
+      _interval: 1
+      _spawnDuration: 5
+    - _enemy: {fileID: 5247731763395690933, guid: 18df10b7f42dd9ea68e20423a321d901, type: 3}
+      _count: 20
+      _interval: 2
+      _spawnDuration: 25
+    - _enemy: {fileID: 8114144186386244999, guid: c88ecc8edf0b0a27dac8db5990a0c9c3, type: 3}
+      _count: 3
+      _interval: 3
+      _spawnDuration: 30
+  - _name: Final showdown
+    _spawnGroups:
+    - _enemy: {fileID: 4702034197633974650, guid: 6b2584c579ea98e568debef3c203002d, type: 3}
+      _count: 20
+      _interval: 1
+      _spawnDuration: 5
+    - _enemy: {fileID: 5247731763395690933, guid: 18df10b7f42dd9ea68e20423a321d901, type: 3}
+      _count: 20
+      _interval: 1.5
+      _spawnDuration: 20
+    - _enemy: {fileID: 8114144186386244999, guid: c88ecc8edf0b0a27dac8db5990a0c9c3, type: 3}
+      _count: 10
+      _interval: 2
+      _spawnDuration: 30
+    - _enemy: {fileID: 2943211008952829579, guid: ca75b461d97f437118fc316b4e1ee8d6, type: 3}
+      _count: 3
+      _interval: 2
+      _spawnDuration: 10
+    - _enemy: {fileID: 2943211008952829579, guid: ca75b461d97f437118fc316b4e1ee8d6, type: 3}
+      _count: 3
+      _interval: 2
+      _spawnDuration: 10
+    - _enemy: {fileID: 2943211008952829579, guid: ca75b461d97f437118fc316b4e1ee8d6, type: 3}
+      _count: 3
+      _interval: 2
+      _spawnDuration: 10
   goldChangeEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1119,7 +1237,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 374336092}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.2397237, y: -0.24233489, z: -11.636524}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1502,7 +1620,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2, y: 0, z: -10}
+  m_LocalPosition: {x: -2, y: -0.6, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
