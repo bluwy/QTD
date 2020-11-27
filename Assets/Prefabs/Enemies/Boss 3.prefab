@@ -154,8 +154,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41d16d468799f8207aeb56a131811201, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 5000
-  _speed: 1.5
+  _health: 8000
+  _speed: 1.3
   _gold: 150
   _sprite: {fileID: 125270539091668559}
 --- !u!50 &5911556524705032563

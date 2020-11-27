@@ -1184,25 +1184,25 @@ MonoBehaviour:
     - _enemy: {fileID: 8114144186386244999, guid: c92bf80769c38c05cb69a43d4616f65f, type: 3}
       _count: 10
       _interval: 1.5
-      _spawnDuration: 15
+      _spawnDuration: 12
     - _enemy: {fileID: 2943211008952829579, guid: 814bbe6c3f81d412d968f8cce8c3aea5, type: 3}
       _count: 3
-      _interval: 2
+      _interval: 3
       _spawnDuration: 30
   - _name: Almost there
     _spawnGroups:
     - _enemy: {fileID: 4702034197633974650, guid: 6b2584c579ea98e568debef3c203002d, type: 3}
-      _count: 30
+      _count: 20
       _interval: 1
       _spawnDuration: 5
     - _enemy: {fileID: 5247731763395690933, guid: 18df10b7f42dd9ea68e20423a321d901, type: 3}
       _count: 15
       _interval: 2
-      _spawnDuration: 30
+      _spawnDuration: 25
     - _enemy: {fileID: 8114144186386244999, guid: c88ecc8edf0b0a27dac8db5990a0c9c3, type: 3}
       _count: 3
       _interval: 3
-      _spawnDuration: 15
+      _spawnDuration: 20
   - _name: Final showdown
     _spawnGroups:
     - _enemy: {fileID: 4702034197633974650, guid: 6b2584c579ea98e568debef3c203002d, type: 3}
