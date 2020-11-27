@@ -61,7 +61,6 @@ namespace QTD.Towers
         void Start()
         {
             UpdateStats();
-            HideAllUI();
         }
 
         void OnEnable()

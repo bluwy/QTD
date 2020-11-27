@@ -41,6 +41,9 @@ namespace QTD
         [SerializeField]
         private GameObject _towerSelects;
 
+        [SerializeField]
+        private GameObject _towerPlaceInfo;
+
         void Awake()
         {
             if (instance == null)
@@ -81,6 +84,7 @@ namespace QTD
         public void ShowTowerSelects(bool isPlacing)
         {
             _towerSelects.SetActive(!isPlacing);
+            _towerPlaceInfo.SetActive(isPlacing);
         }
 
         public void SetHealthText(string text)

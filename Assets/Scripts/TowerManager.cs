@@ -43,6 +43,9 @@ namespace QTD
             // Place in off-screen (hard-coded but hey)
             _placingTower = Instantiate(tower, new Vector2(1000, 1000), Quaternion.identity).GetComponent<Tower>();
 
+            // Preview attack range
+            _placingTower.ShowAttackRange();
+
             UIManager.instance.ShowTowerSelects(true);
         }
 
@@ -64,7 +67,7 @@ namespace QTD
 
             _targetTile = collided?.GetComponent<GridTile>();
 
-            if (_targetTile is null)
+            if (_targetTile is null || _targetTile.IsOccupied)
                 _placingTower.transform.position = new Vector2(1000, 1000);
             else
                 _placingTower.transform.position = _targetTile.transform.position;
@@ -80,6 +83,7 @@ namespace QTD
             if (grid is object && grid == _targetTile && !grid.IsOccupied)
             {
                 _placingTower.transform.position = _targetTile.transform.position;
+                _placingTower.HideAllUI();
 
                 // Tower can shoot when assigned placed tile
                 _placingTower.PlacedTile = _targetTile;
@@ -87,9 +91,9 @@ namespace QTD
                 // Occupy space in tile, so no other tower can be placed here
                 _targetTile.Tower = _placingTower;
 
-                GameManager.instance.UseGold(_placingTower.InitialCost);
-
                 UIManager.instance.ShowTowerSelects(false);
+
+                GameManager.instance.UseGold(_placingTower.InitialCost);
 
                 // Clean-up
                 _placingTower = null;
