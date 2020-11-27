@@ -13,15 +13,18 @@ namespace QTD
 
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
-            Rect timelineRect = position;
-            timelineRect.height = TIMELINE_HEIGHT;
+            // Draw default ui
+            EditorGUI.PropertyField(position, property, label, true);
+
+            float defaultUiHeight = EditorGUI.GetPropertyHeight(property);
 
             // Draw timeline
             List<SpawnGroup> spawnGroups = GetSpawnGroups(property);
 
             // Draw timeline background
             Rect bgRect = position;
-            bgRect.height = (TIMELINE_HEIGHT + TIMELINE_MARGIN_BOTTOM) * spawnGroups.Count;
+            bgRect.y += defaultUiHeight;
+            bgRect.height -= defaultUiHeight;
             EditorGUI.DrawRect(bgRect, Color.gray);
 
             // Draw timeline bars
@@ -33,7 +36,7 @@ namespace QTD
 
                 Rect groupRect = position;
                 groupRect.x += cumulativeDuration / waveDuration * groupRect.width;
-                groupRect.y += (TIMELINE_HEIGHT + TIMELINE_MARGIN_BOTTOM) * i;
+                groupRect.y += defaultUiHeight + (TIMELINE_HEIGHT + TIMELINE_MARGIN_BOTTOM) * i;
                 groupRect.width = (group.Count * group.Interval) / waveDuration * groupRect.width;
                 groupRect.height = TIMELINE_HEIGHT;
 
@@ -41,12 +44,6 @@ namespace QTD
 
                 cumulativeDuration += group.SpawnDuration;
             }
-
-            // Draw default ui
-            Rect defaultRect = position;
-            defaultRect.y += (TIMELINE_HEIGHT + TIMELINE_MARGIN_BOTTOM) * spawnGroups.Count;
-            defaultRect.height -= (TIMELINE_HEIGHT + TIMELINE_MARGIN_BOTTOM) * spawnGroups.Count;
-            EditorGUI.PropertyField(defaultRect, property, label, true);
         }
 
         public override float GetPropertyHeight(SerializedProperty property, GUIContent label)

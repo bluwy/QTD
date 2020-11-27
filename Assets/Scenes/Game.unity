@@ -1057,7 +1057,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _health: 3
   _gold: 100
-  _timeBeforeSpawn: 3
+  _timeBeforeSpawn: 5
   _menuMusic: {fileID: 8300000, guid: ddafb984d90d44c389376c667c4c0ef0, type: 3}
   _gameMusic: {fileID: 8300000, guid: 98a21ab4bd05d2e11b4ff75a37c6c2a0, type: 3}
   _waves:
