@@ -3123,7 +3123,7 @@ GameObject:
   - component: {fileID: 956761238}
   - component: {fileID: 956761237}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15410,7 +15410,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 400, y: 400}
+  m_SizeDelta: {x: 420, y: 350}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1941671108
 MonoBehaviour:
@@ -15528,7 +15528,7 @@ GameObject:
   - component: {fileID: 1945569093}
   - component: {fileID: 1945569092}
   m_Layer: 5
-  m_Name: Text (TMP) (1)
+  m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15574,17 +15574,22 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: 'Survive 10 waves of enemies by defending your base with towers. Make sure
-    no enemies enter your base, otherwise your heart will decrease. Each enemy defeated
-    will provide gold that can be used to build and upgrade towers!
+    no more than 3 enemies enter your base. Each enemy defeated will drop gold that
+    can be used to build and upgrade towers!
 
 
-    Click on
-    a tower on the bottom-right to select a tower to place on a grid. Press "escape"
-    to cancel placing the tower. Press on a placed tower to upgrade or sell it. Press
-    "space" to pause the game.
+    <#F7CB1B>Tip:</color>
 
+    - Click
+    on a tower on the bottom-right to select a tower and click on the grid to place
+    it.
 
-    Good luck!'
+    - Press "escape" to cancel placing the tower.
+
+    - Click on a placed
+    tower to upgrade or sell it.
+
+    - Press "space" to pause the game.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 983c7ea79566650be982a8d38fc32b65, type: 2}
   m_sharedMaterial: {fileID: 309238356942186683, guid: 983c7ea79566650be982a8d38fc32b65, type: 2}
@@ -15618,7 +15623,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 8
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
