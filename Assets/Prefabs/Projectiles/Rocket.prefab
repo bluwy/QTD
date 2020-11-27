@@ -99,3 +99,4 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   _explosion: {fileID: 4435840784793177172, guid: 421323977eedf140caf3d2d6698b2ab4, type: 3}
+  _explosionSfx: {fileID: 8300000, guid: 4fa9a38965170e281a88fe7d7e8a02ed, type: 3}

@@ -7,6 +7,7 @@ using DG.Tweening;
 
 namespace QTD
 {
+    [RequireComponent(typeof(AudioSource))]
     public class GameManager : MonoBehaviour
     {
         public static GameManager instance;
@@ -22,6 +23,12 @@ namespace QTD
         private int _timeBeforeSpawn = 10;
 
         [SerializeField]
+        private AudioClip _menuMusic;
+
+        [SerializeField]
+        private AudioClip _gameMusic;
+
+        [SerializeField]
         private List<Wave> _waves = new List<Wave>();
 
         private bool paused = false;
@@ -34,6 +41,8 @@ namespace QTD
         private bool _isResettingGame = false;
         private bool _isSpawnFinish = false;
 
+        private AudioSource _audioSource;
+
         void Awake()
         {
             if (instance == null)
@@ -41,6 +50,8 @@ namespace QTD
 
             Time.timeScale = 1;
             Application.targetFrameRate = 60;
+
+            _audioSource = GetComponent<AudioSource>();
         }
 
         void Start()
@@ -49,6 +60,7 @@ namespace QTD
             UIManager.instance.ShowMainMenu();
             UIManager.instance.SetHealthText(_health.ToString());
             UIManager.instance.SetGoldText(_gold.ToString());
+            PlayMenuMusic();
         }
 
         void Update()
@@ -86,6 +98,7 @@ namespace QTD
         {
             _isGameStarted = true;
             UIManager.instance.ShowGamePlay();
+            PlayGameMusic();
             StartCoroutine(Spawn());
         }
 
@@ -94,6 +107,7 @@ namespace QTD
             _isGameEnded = true;
             StopAllCoroutines();
             Time.timeScale = 0;
+            _audioSource.Stop();
             UIManager.instance.ShowGameEnd(_health <= 0 ? "GAME OVER" : "WIN!");
         }
 
@@ -113,12 +127,6 @@ namespace QTD
             paused = false;
             Time.timeScale = 1;
             UIManager.instance.ShowGamePlay();
-        }
-
-        public void ChangeGameSpeed(float to)
-        {
-            // TODO: UI
-            Time.timeScale = to;
         }
 
         public void DecrementHealth()
@@ -165,6 +173,20 @@ namespace QTD
         {
             if (_health <= 0)
                 EndGame();
+        }
+
+        private void PlayMenuMusic()
+        {
+            _audioSource.Stop();
+            _audioSource.clip = _menuMusic;
+            _audioSource.Play();
+        }
+
+        private void PlayGameMusic()
+        {
+            _audioSource.Stop();
+            _audioSource.clip = _gameMusic;
+            _audioSource.Play();
         }
     }
 }
