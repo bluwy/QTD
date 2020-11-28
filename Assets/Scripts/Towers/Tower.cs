@@ -60,6 +60,7 @@ namespace QTD.Towers
 
         void Start()
         {
+            // Initial setup stats
             UpdateStats();
         }
 
@@ -94,16 +95,25 @@ namespace QTD.Towers
             _intervalCounter = AttackInterval;
         }
 
+        /// <summary>
+        /// Show attack range
+        /// </summary>
         public void ShowAttackRange()
         {
             _rangeCircle.SetActive(true);
         }
 
+        /// <summary>
+        /// Show upgrade and sell buttons
+        /// </summary>
         public void ShowOptions()
         {
             _uiCanvas.SetActive(true);
         }
 
+        /// <summary>
+        /// Hide attack range and options
+        /// </summary>
         public void HideAllUI()
         {
             _rangeCircle.SetActive(false);
@@ -137,7 +147,7 @@ namespace QTD.Towers
 
         void OnTriggerEnter2D(Collider2D col)
         {
-            // Check if gameobject layer intersect enemy layer mask
+            // Check if gameobject layer intersect enemy layer mask (wish Unity made this easier)
             if (((1 << col.gameObject.layer) & _enemyLayer.value) != 0)
                 _nearbyEnemies.Add(col.gameObject.GetComponent<Enemy>());
         }
@@ -148,8 +158,15 @@ namespace QTD.Towers
                 _nearbyEnemies.Remove(col.gameObject.GetComponent<Enemy>());
         }
 
+        /// <summary>
+        /// Launches projectile towards enemy, mainly calls the respective projectile class and
+        /// call the projectile's launch method
+        /// </summary>
         protected abstract void LaunchProjectile(Enemy enemy);
 
+        /// <summary>
+        /// Find the closest enemy from all nearby enemies
+        /// </summary>
         public virtual Enemy GetClosestEnemy()
         {
             float smallestSqrMagnitude = float.PositiveInfinity;
@@ -169,6 +186,9 @@ namespace QTD.Towers
             return closestEnemy;
         }
 
+        /// <summary>
+        /// Update tower's relevant components depending on the level
+        /// </summary>
         protected virtual void UpdateStats()
         {
             GetComponent<CircleCollider2D>().radius = AttackRange;
@@ -180,7 +200,10 @@ namespace QTD.Towers
                 _upgradeText.text = UpgradeCost.ToString();
         }
 
-        // Listen to gold change
+        /// <summary>
+        /// Update upgrade button interactability depending on available gold
+        /// </summary>
+        /// <param name="gold"></param>
         private void CheckUpgradable(int gold)
         {
             _upgradeButton.interactable = !IsMaxLevel && GameManager.instance.IsGoldSufficient(UpgradeCost);

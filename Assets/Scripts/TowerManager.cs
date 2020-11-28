@@ -5,6 +5,9 @@ using QTD.Towers;
 
 namespace QTD
 {
+    /// <summary>
+    /// Manage placing towers
+    /// </summary>
     public class TowerManager : MonoBehaviour
     {
         public static TowerManager instance;
@@ -36,6 +39,9 @@ namespace QTD
                 PlaceTower();
         }
 
+        /// <summary>
+        /// </summary>
+        /// <param name="tower"></param>
         public void SelectTower(GameObject tower)
         {
             if (IsPlacingTower) return;
@@ -46,6 +52,7 @@ namespace QTD
             // Preview attack range
             _placingTower.ShowAttackRange();
 
+            // Hide selects
             UIManager.instance.ShowTowerSelects(true);
         }
 
@@ -55,12 +62,17 @@ namespace QTD
 
             Destroy(_placingTower.gameObject);
 
+            // Show selects
             UIManager.instance.ShowTowerSelects(false);
 
+            // Clean-up
             _placingTower = null;
             _targetTile = null;
         }
 
+        /// <summary>
+        /// Handle pre-placing tower when hovering over tiles
+        /// </summary>
         private void HoverTower()
         {
             Collider2D collided = Physics2D.OverlapPoint(Camera.main.ScreenToWorldPoint(Input.mousePosition), _gridLayer.value);
@@ -91,6 +103,7 @@ namespace QTD
                 // Occupy space in tile, so no other tower can be placed here
                 _targetTile.Tower = _placingTower;
 
+                // Show selects
                 UIManager.instance.ShowTowerSelects(false);
 
                 GameManager.instance.UseGold(_placingTower.InitialCost);

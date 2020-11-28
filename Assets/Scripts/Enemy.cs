@@ -50,6 +50,9 @@ namespace QTD
         }
         private float? _totalPathDistanceCached;
 
+        /// <summary>
+        /// Total time required to walk throught the path
+        /// </summary>
         private float _totalTimeRequired
         {
             get { return _totalPathDistance / _speed; }
@@ -85,6 +88,9 @@ namespace QTD
                 UpdateAlpha();
         }
 
+        /// <summary>
+        /// Set walking path
+        /// </summary>
         public void SetPath(List<Vector2> path)
         {
             _path = path;
@@ -95,21 +101,33 @@ namespace QTD
             InitPathTween();
         }
 
+        /// <summary>
+        /// Start walking on the path
+        /// </summary>
         public void StartWalking()
         {
             _pathTween.Play();
         }
 
+        /// <summary>
+        /// Stop walking on the path
+        /// </summary>
         public void StopWalking()
         {
             _pathTween.Pause();
         }
 
+        /// <summary>
+        /// Get future position after a duration
+        /// </summary>
         public Vector2 GetPosition(float afterDuration)
         {
             return _pathTween.PathGetPoint(_pathTween.ElapsedPercentage() + afterDuration / _totalTimeRequired);
         }
 
+        /// <summary>
+        /// Setup the tween when setting tha path vectors
+        /// </summary>
         private void InitPathTween()
         {
             // If there's an exisiting tween, kill
@@ -130,6 +148,10 @@ namespace QTD
                 .Pause();
         }
 
+        /// <summary>
+        /// Handle enemy dead when health reaches <= 0
+        /// </summary>
+        /// <param name="successReachEnd">Whether the enemy reaches the end of path</param>
         private void Die(bool successReachEnd)
         {
             if (IsDead) return;

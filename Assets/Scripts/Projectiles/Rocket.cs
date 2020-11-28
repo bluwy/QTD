@@ -22,6 +22,7 @@ namespace QTD.Projectiles
 
             transform.up = new Vector3(targetPos.x, targetPos.y, transform.position.z) - transform.position;
 
+            // Move projectile towards enemy
             transform
                 .DOMove(targetPos, Speed)
                 .SetEase(Ease.Linear)

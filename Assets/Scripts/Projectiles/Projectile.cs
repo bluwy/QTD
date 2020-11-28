@@ -10,12 +10,18 @@ namespace QTD.Projectiles
         protected LayerMask _enemyLayer;
 
         /// <summary>
-        /// Unit per second
+        /// Move speed in units per second
         /// </summary>
         public float Speed { get; set; }
 
+        /// <summary>
+        /// Damage on impact
+        /// </summary>
         public float Damage { get; set; }
 
+        /// <summary>
+        /// Launch this projectile towards enemy
+        /// </summary>
         public abstract void Launch(Enemy enemy);
     }
 }

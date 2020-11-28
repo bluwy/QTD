@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace QTD
 {
+    /// <summary>
+    /// Contains all possible paths the enemies can take
+    /// </summary>
     public class PathManager : MonoBehaviour
     {
         /// <summary>
@@ -40,6 +43,7 @@ namespace QTD
 
         void OnDrawGizmosSelected()
         {
+            // Draw path preview in editor
             foreach (Path path in _paths)
             {
                 List<Vector2> waypoints = path.waypoints;

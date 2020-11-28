@@ -5,6 +5,9 @@ using UnityEditor;
 
 namespace QTD
 {
+    /// <summary>
+    /// Custom editor that draws timeline of wave's spawns
+    /// </summary>
     [CustomPropertyDrawer(typeof(Wave))]
     public class WaveEditor : PropertyDrawer
     {
@@ -52,6 +55,9 @@ namespace QTD
             return EditorGUI.GetPropertyHeight(property) + (TIMELINE_HEIGHT + TIMELINE_MARGIN_BOTTOM) * spawnGroups.Count;
         }
 
+        /// <summary>
+        /// Get list of spawn group's from serialized property
+        /// </summary>
         private List<SpawnGroup> GetSpawnGroups(SerializedProperty property)
         {
             List<SpawnGroup> spawnGroups = new List<SpawnGroup>();
@@ -71,6 +77,9 @@ namespace QTD
             return spawnGroups;
         }
 
+        /// <summary>
+        /// Total up spawn durations
+        /// </summary>
         private float GetWaveDuration(List<SpawnGroup> spawnGroups)
         {
             float duration = 0f;

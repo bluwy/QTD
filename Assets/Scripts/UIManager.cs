@@ -104,6 +104,9 @@ namespace QTD
             StartCoroutine(ShowWaveAnimation());
         }
 
+        /// <summary>
+        /// Show wave for a duration
+        /// </summary>
         private IEnumerator ShowWaveAnimation()
         {
             _waveText.gameObject.SetActive(true);

@@ -43,6 +43,7 @@ namespace QTD.Towers
         {
             CannonBall projectile = Instantiate(_projectile, transform.position, Quaternion.identity).GetComponent<CannonBall>();
 
+            // Update stats
             projectile.Speed = CurrentLevelInfo.projectileSpeed;
             projectile.Damage = CurrentLevelInfo.projectileDamage;
 

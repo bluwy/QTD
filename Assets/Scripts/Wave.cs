@@ -16,10 +16,7 @@ namespace QTD
         [Tooltip("The list of enemy groups to spawn")]
         private List<SpawnGroup> _spawnGroups;
 
-        public string Name
-        {
-            get { return _name; }
-        }
+        public string Name => _name;
 
         public Wave(string name, List<SpawnGroup> spawnGroups)
         {
@@ -29,7 +26,7 @@ namespace QTD
 
         /// <summary>
         /// Spawn the wave.
-        /// NOTE: caller is used for StartCoroutine only, ugly but it works lol
+        /// NOTE: caller is used for StartCoroutine only, ugly but it works lol (no choice)
         /// </summary>
         public IEnumerator Spawn(MonoBehaviour caller)
         {

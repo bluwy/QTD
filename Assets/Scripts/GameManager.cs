@@ -83,6 +83,9 @@ namespace QTD
             }
         }
 
+        /// <summary>
+        /// Restart the game by reloading the scene
+        /// </summary>
         public void ResetGame()
         {
             if (_isResettingGame) return;
@@ -155,8 +158,12 @@ namespace QTD
             return amount <= _gold;
         }
 
+        /// <summary>
+        /// Spawn waves
+        /// </summary>
         private IEnumerator Spawn()
         {
+            // Wait before start spawning
             yield return new WaitForSeconds(_timeBeforeSpawn);
 
             for (int i = 0; i < _waves.Count; i++)

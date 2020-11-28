@@ -44,6 +44,7 @@ namespace QTD.Towers
         {
             Rocket projectile = Instantiate(_projectile, transform.position, Quaternion.identity).GetComponent<Rocket>();
 
+            // Update stats
             projectile.Speed = CurrentLevelInfo.projectileSpeed;
             projectile.Damage = CurrentLevelInfo.projectileDamage;
             projectile.SplashRadius = CurrentLevelInfo.projectileSplashRadius;

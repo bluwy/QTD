@@ -15,6 +15,7 @@ namespace QTD.Projectiles
             // Get projected enemy position after time
             Vector2 targetPos = GetEnemyTargetPosition(enemy);
 
+            // Move projectile towards enemy
             transform
                 .DOMove(targetPos, Speed)
                 .SetEase(Ease.Linear)

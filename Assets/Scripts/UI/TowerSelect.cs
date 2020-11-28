@@ -8,6 +8,9 @@ using QTD.Towers;
 
 namespace QTD.UI
 {
+    /// <summary>
+    /// Tower select button at bottom-right corner
+    /// </summary>
     [RequireComponent(typeof(Button))]
     public class TowerSelect : MonoBehaviour
     {
@@ -58,6 +61,9 @@ namespace QTD.UI
                 TowerManager.instance.SelectTower(_towerToSelect);
         }
 
+        /// <summary>
+        /// Update interactability based on available gold
+        /// </summary>
         private void CheckGoldSufficient(int gold)
         {
             _button.interactable = _towerCost <= gold;

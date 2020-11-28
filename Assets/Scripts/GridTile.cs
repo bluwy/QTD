@@ -11,13 +11,11 @@ namespace QTD
     {
         public Tower Tower { get; set; }
 
-        public bool IsOccupied
-        {
-            get { return Tower is object; }
-        }
+        public bool IsOccupied => Tower is object;
 
         void Update()
         {
+            // When click on tile and has tower, show tower options
             if (IsOccupied && !TowerManager.instance.IsPlacingTower && Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
             {
                 // Collide with grid tile layer and ui layer (possibly tower ui)
@@ -25,11 +23,13 @@ namespace QTD
 
                 if (collided?.GetComponent<GridTile>() == this)
                 {
+                    // Is clicking on tile, show ui
                     Tower.ShowAttackRange();
                     Tower.ShowOptions();
                 }
                 else
                 {
+                    // Assume click other places, then close ui
                     Tower.HideAllUI();
                 }
             }
