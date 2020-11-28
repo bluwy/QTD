@@ -155,7 +155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 1000
-  _speed: 0.5
+  _speed: 0.7
   _gold: 80
   _sprite: {fileID: 125270539091668559}
 --- !u!50 &5911556524705032563

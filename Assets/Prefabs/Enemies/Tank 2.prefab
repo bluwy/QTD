@@ -72,8 +72,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41d16d468799f8207aeb56a131811201, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 900
-  _speed: 1
+  _health: 1100
+  _speed: 1.2
   _gold: 10
   _sprite: {fileID: 7041059200117139825}
 --- !u!50 &3603376384979021389
