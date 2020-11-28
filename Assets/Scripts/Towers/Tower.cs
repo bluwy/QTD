@@ -130,7 +130,8 @@ namespace QTD.Towers
         {
             GameManager.instance.AddGold(SellPrice);
             // Allows tile to be placed by other tower
-            PlacedTile.Tower = null;
+            if (PlacedTile is object)
+                PlacedTile.Tower = null;
             Destroy(gameObject);
         }
 
@@ -149,7 +150,7 @@ namespace QTD.Towers
 
         protected abstract void LaunchProjectile(Enemy enemy);
 
-        protected virtual Enemy GetClosestEnemy()
+        public virtual Enemy GetClosestEnemy()
         {
             float smallestSqrMagnitude = float.PositiveInfinity;
             Enemy closestEnemy = null;
