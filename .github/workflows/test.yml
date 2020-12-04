@@ -33,5 +33,12 @@ jobs:
 
       - name: Run tests
         uses: webbertakken/unity-test-runner@v1.3
+        id: testRunner
         with:
           unityVersion: ${{ matrix.unityVersion }}
+          testMode: playmode
+
+      - uses: actions/upload-artifact@v1
+        with:
+          name: Test results (play mode)
+          path: ${{ steps.testRunner.outputs.artifactsPath }}
