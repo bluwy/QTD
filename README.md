@@ -4,7 +4,7 @@ A top-down tower defense game, made with Unity.
 
 # Download
 
-To start playing the game, go to the [Release page](https://github.com/bluwy/QTD/releases) and download one of the zip files that matches your operating system.
+To start playing the game, go to the [releases page](https://github.com/bluwy/QTD/releases) and download one of the zip files that matches your operating system.
 
 Currently supported OS:
 
@@ -12,7 +12,7 @@ Currently supported OS:
 - MacOS (Intel-based)
 - Windows (64 bit)
 
-Once downloaded, unzip it and start the game executable (name starts with "Standalone...").
+Once downloaded, unzip it and start the game executable (name starts with "QTD-...").
 
 ## Development
 

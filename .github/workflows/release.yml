@@ -38,12 +38,12 @@ jobs:
         with:
           unityVersion: ${{ matrix.unityVersion }}
           targetPlatform: ${{ matrix.targetPlatform }}
-          buildName: ${{ matrix.targetPlatform }}
+          buildName: QTD-${{ matrix.targetPlatform }}
 
       - name: Zip build
         run: |
-          pushd build/${{ matrix.targetPlatform }}
-          zip -r ../../${{ matrix.targetPlatform }}.zip .
+          pushd build/QTD-${{ matrix.targetPlatform }}
+          zip -r ../../QTD-${{ matrix.targetPlatform }}.zip .
           popd
 
       - name: Upload release asset
@@ -52,6 +52,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ github.event.release.upload_url }}
-          asset_path: ./${{ matrix.targetPlatform }}.zip
+          asset_path: ./QTD-${{ matrix.targetPlatform }}.zip
           asset_name: QTD-${{ matrix.targetPlatform }}.zip
           asset_content_type: application/zip
