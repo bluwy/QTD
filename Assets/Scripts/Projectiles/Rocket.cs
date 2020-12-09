@@ -42,7 +42,7 @@ namespace QTD.Projectiles
                     explosion.transform.localScale = new Vector3(SplashRadius, SplashRadius, SplashRadius);
 
                     // Explosion sound
-                    AudioSource.PlayClipAtPoint(_explosionSfx, Camera.main.transform.position, 0.2f);
+                    AudioSource.PlayClipAtPoint(_explosionSfx, Camera.main.transform.position, 0.05f);
 
                     Destroy(gameObject);
                 })

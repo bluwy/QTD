@@ -22,7 +22,7 @@ namespace QTD.Projectiles
                 .SetSpeedBased()
                 .OnPlay(() =>
                 {
-                    AudioSource.PlayClipAtPoint(_shootSfx, Camera.main.transform.position, 0.3f);
+                    AudioSource.PlayClipAtPoint(_shootSfx, Camera.main.transform.position, 0.1f);
                 })
                 .OnComplete(() =>
                 {
