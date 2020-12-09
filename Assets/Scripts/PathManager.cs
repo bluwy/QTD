@@ -38,7 +38,7 @@ namespace QTD
 
         public List<Vector2> GetRandomPath()
         {
-            return _paths[Random.Range(0, _paths.Count - 1)].waypoints;
+            return _paths[Random.Range(0, _paths.Count)].waypoints;
         }
 
         void OnDrawGizmosSelected()
