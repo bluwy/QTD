@@ -42,7 +42,7 @@ jobs:
 
       - name: Zip build
         run: |
-          pushd build/QTD-${{ matrix.targetPlatform }}
+          pushd build/${{ matrix.targetPlatform }}
           zip -r ../../QTD-${{ matrix.targetPlatform }}.zip .
           popd
 
